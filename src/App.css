@@ -13,15 +13,16 @@
     }
 }
 
-.App-header {
+.App-content {
     background-color: #282c34;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: center;*/
-    /*font-size: calc(10px + 2vmin);*/
+    justify-content: center;
+    /* font-size: calc(10px + 2vmin); */
     color: white;
+    padding: 1rem 2rem;
 }
 
 .App-link {
@@ -55,6 +56,8 @@
 }
 
 .page-widget {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     padding: 1rem;
     margin: 2rem 1rem;
@@ -62,6 +65,7 @@
     color: #fafafa;
     border-radius: 5px;
     justify-content: space-between;
+    min-height: min(100%, 500px);
 }
 
 .card {
@@ -84,7 +88,7 @@
 
 .word {
     padding: 2px 4px;
-    background: #ffffff88;
+    /*background: #ffffff88;*/
     margin: 5px;
     border-radius: 5px;
     display: flex;
@@ -112,10 +116,11 @@
 
 .modal-dialog {
     padding: 3rem 2rem;
-    background: #fafafa;
-    color: #282c34;
+    background: #282c34;
+    /* color: #282c34; */
     border-radius: 20px;
     width: min(50%, 400px);
+    box-shadow: 0 2px 24px rgb(18 18 18 / 50%);
 }
 
 .modal-dialog .dismiss-message {

@@ -74,6 +74,10 @@ function EBookReader() {
     const words1 = content1.split(" "); // words in page one of the 2-page view
     const words2 = content2.split(" "); // words in page two of the 2-page view
 
+    const canGoToPrev = () => currPage >= 2;
+
+    const canGoToNext = () => data?.book?.pages?.length - 2 > currPage;
+
     const goToPrevPage = () => {
         setCurrPage(currPage <= 2 ? 0 : currPage - 2);
     }
@@ -88,41 +92,39 @@ function EBookReader() {
         {shouldShowModal ? dialog() : ''} {/*conditionally display modal dialog*/}
 
         <div className={"navigation"}>
-            <button className={"nav-btn"} onClick={goToPrevPage}>Prev</button>
+            <button className={"nav-btn"} onClick={goToPrevPage} disabled={!canGoToPrev()}>Prev</button>
             <span>Current page: {firstPageNo + 1} & {firstPageNo + 2}</span>
-            <button className={"nav-btn"} onClick={goToNextPage}>Next</button>
+            <button className={"nav-btn"} onClick={goToNextPage} disabled={!canGoToNext()}>Next</button>
         </div>
 
         {/* Book */}
-        <div style={{color: "#fafafa", width: "100%"}}>
-            <div className={"page-widget"}>
-                {/* Page 1 */}
-                <div className={"card"}>
-                    <div className={"page-content"}>{
-                        words1.map((word, index) => {
-                            return <span className={"word"}
-                                         style={{cursor: "pointer"}}
-                                         onClick={() => handleWordClick(tokens1, content1.indexOf(word))}>
+        <div className={"page-widget"}>
+            {/* Page 1 */}
+            <div className={"card"}>
+                <div className={"page-content"}>{
+                    words1.map((word, index) => {
+                        return <span className={"word"}
+                                     style={{cursor: "pointer"}}
+                                     onClick={() => handleWordClick(tokens1, content1.indexOf(word))}>
                                             {word}</span>
-                        })
-                    }
-                    </div>
+                    })
+                }
                 </div>
+            </div>
 
-                {/* Vertical Divider */}
-                <div className={"divider"}/>
+            {/* Vertical Divider */}
+            <div className={"divider"}/>
 
-                {/* Page 2 */}
-                <div className={"card"}>
-                    <div className={"page-content"}>{
-                        words2.map((word, index) => {
-                            return <span className={"word"}
-                                         style={{cursor: "pointer"}}
-                                         onClick={() => handleWordClick(tokens2, content2.indexOf(word))}>
+            {/* Page 2 */}
+            <div className={"card"}>
+                <div className={"page-content"}>{
+                    words2.map((word, index) => {
+                        return <span className={"word"}
+                                     style={{cursor: "pointer"}}
+                                     onClick={() => handleWordClick(tokens2, content2.indexOf(word))}>
                                             {word}</span>
-                        })
-                    }
-                    </div>
+                    })
+                }
                 </div>
             </div>
         </div>

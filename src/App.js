@@ -7,12 +7,15 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <div className="App">
-                <header className="App-header">
+                <main className="App-content">
                     <h2>
                         Ello - Full Stack Engineer Coding Challenge
                     </h2>
                     <EBookReader/>
-                </header>
+                    <p>
+                        &copy; MURAGE
+                    </p>
+                </main>
             </div>
         </ApolloProvider>
     );
