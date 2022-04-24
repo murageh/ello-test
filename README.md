@@ -1,25 +1,28 @@
 # Ello - Full Stack Engineer Coding Challenge
 
+### Click here to [Preview live site](https://ello-test.netlify.app)
+
     Originally bootstrapped using `npx create-react-app`
 
 Link to the challenge: [👉 Here](https://github.com/ElloTechnology/full-stack-test)
 
 ## Screenshots
 
-|       Screenshot 1        |
+|        First page         |
 |:-------------------------:|
 | ![](screenshots/img1.png) |
 
-|       Screenshot 2        |
+|         Modal view         |
+|:--------------------------:|
+| ![](screenshots/modal.png) |
+
+|       An empty page       |
 |:-------------------------:|
 | ![](screenshots/img2.png) |
 
-|       Screenshot 3        |
+|         Last page         |
 |:-------------------------:|
 | ![](screenshots/img3.png) |
 
-|       Screenshot 4        |
-|:-------------------------:|
-| ![](screenshots/img4.png) |
 
 `By MURAGE (April 2022).`
